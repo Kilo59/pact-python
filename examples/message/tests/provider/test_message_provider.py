@@ -29,10 +29,10 @@ def document_created_handler():
 
 def document_deleted_handler():
     return {
-        "event": "ObjectCreated:Delete",
-        "documentName": "document.doc",
-        "creator": "TP",
-        "documentType": "microsoft-word"
+        "Aevent": "ObjectCreated:Delete",
+        "BdocumentName": "document.doc",
+        "Ccreator": "TP",
+        "DdocumentType": "microsoft-word"
     }
 
 
