@@ -2,6 +2,7 @@
 import logging
 
 import pytest
+import os
 
 from pact import Verifier
 
@@ -78,8 +79,12 @@ def test_user_service_provider_against_pact(server):
     # if it has been successful in the past (since this is what the Pact Broker
     # is for), if the verification of an interaction fails then the success
     # result will be != 0, and so the test will FAIL.
+
+    def list_full_paths(directory):
+        return [os.path.join(directory, file) for file in os.listdir(directory)]
+
     output, _ = verifier.verify_pacts(
-        "../pacts/userserviceclient-userservice.json",
+        ','.join(map(str, list_full_paths("../pacts"))),
         verbose=False,
         provider_states_setup_url="{}/_pact/provider_states".format(PROVIDER_URL),
     )
