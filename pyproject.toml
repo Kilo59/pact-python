@@ -67,6 +67,14 @@ types = [
   "types-cffi     ~= 1.0",
   "types-requests ~= 2.0",
 ]
+docs = [
+  "mkdocs               ~= 1.5",
+  "mkdocs-material      ~= 9.4",
+  "mkdocs_gen_files     ~= 0.5",
+  "mkdocs-literate-nav  ~= 0.6",
+  "mkdocs-section-index ~= 0.3",
+  "mkdocstrings[python] ~= 0.23",
+]
 test = [
   "aiohttp[speedups] ~= 3.0",
   "coverage[toml]    ~= 7.0",
@@ -79,7 +87,12 @@ test = [
   "pytest-cov        ~= 4.0",
   "testcontainers    ~= 3.0",
 ]
-dev = ["pact-python[types]", "pact-python[test]", "ruff==0.2.2"]
+dev = [
+    "pact-python[types]",
+    "pact-python[test]",
+    "pact-python[docs]",
+    "ruff==0.2.2"
+ ]
 
 ################################################################################
 ## Hatch Build Configuration
